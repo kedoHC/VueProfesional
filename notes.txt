@@ -1,0 +1,81 @@
+1.- en el webpack.config.js
+
+#Para mostrar los errores en consola mejor
+
+devServer: {
+      historyApiFallback: true,
+      noInfo: treu, --> false
+      overlay: true
+},
+
+--------------------------------------------------
+
+2.- Configurar ESLint
+https://eslint.org/
+
+para el estandar JS
+https://standardjs.com/
+
+#Para establecer reglas de tipado de codigo en trabajo en equipo
+
+comandos: (verificar antes en la pagina oficial:
+
+https://github.com/standard/eslint-config-standard
+
+)
+
+$ npm i -D eslint
+
+$ npm install --save-dev eslint-config-standard eslint-plugin-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node
+
+Creamos sobre la raiz el archivo .eslinrc con la fonfiguración:
+
+{
+      "extends": "standard",
+
+      "rules":{
+            "no-new": 0     
+      }
+}
+
+3.- Instalar pluggin para ESlint del editor en uso.
+
+4.- Reiniciar Editor de Cödigo
+
+5.- Establecer Eslint con webpack
+
+$ npm i -D eslint-loader
+
+en el webpack.config.js:
+
+#Agregamos una nueva regla:
+
+rules: [
+      {
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+        include: [path.resolve(__dirname, './src')]
+
+      },
+
+6.- Para que funcione correctamente sobre HTML
+
+$ npm i -D eslint-plugin-html
+
+y en el archivo .eslinrc agregar:
+
+ "plugins":[
+            "html"
+      ]
+
+7.- Agregar un archivo principal de Scss para variables, Mixins y Media Querys generales.
+
+Creamos dentro de ./src una carpeta scss y dentro un archivo main.scss
+
+y lo importamos dentro de la etiqueta <style> del componente principal App.vue
+
+<style>
+      @import './scss/main.scss';
+</style>
+
