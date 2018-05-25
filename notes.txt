@@ -1,3 +1,16 @@
+INICIAR EL PROYECTO
+
+https://github.com/vuejs-templates/webpack-simple
+
+$ npm install -g vue-cli
+$ vue init webpack-simple my-project
+$ cd my-project
+$ npm install
+$ npm run dev
+
+//-------------------------------------------------
+
+
 1.- en el webpack.config.js
 
 #Para mostrar los errores en consola mejor
@@ -78,4 +91,27 @@ y lo importamos dentro de la etiqueta <style> del componente principal App.vue
 <style>
       @import './scss/main.scss';
 </style>
+
+8.- Instalar PUG
+
+$ npm i -D pug pug-loader
+
+
+------------CON LOS PASOS ANTERIORES QUEDA ESTABLECIDO NUESTRO AMBIENTE DE TRABAJO----------------------------
+
+Notas de desarrollo
+
+para consumir servicios con FETCH 
+
+https://github.com/Huemul/trae
+
+$npm i -S trae 
+
+en el archivo en donde vamos a consumir:
+
+import trea from 'trae'
+
+Importar tambien el archivo de configuracón (es una buena practica tener en un objeto nuestra configuración del servicio)
+
+import configService from './configService'
 
